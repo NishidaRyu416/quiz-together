@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="QuizTogether">
+<head>
+  <title>QuizTogether</title>
+  <%= include_gon %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+  <%= csrf_meta_tags %>
+</head>
+<header>
+  <%= render"layouts/header"%>
+</header>
+<br>
+<body>
+<div class="container">
+  <%= yield %>
+</div>
+  <!-- Javascripts
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag "application" %>
+  <%= yield(:page_javascript) if content_for?(:page_javascript) %>
+</body>
+<footer><%= render"layouts/footer"%></footer>
+</html>

@@ -1,0 +1,24 @@
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">HistoryQuiz</h5>
+        <p class="grey-text text-lighten-4">Welcome to HistoryQuiz</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Members</h5>
+        <%@users.each do|user|%>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!"><%=user.name%></a></li>
+        </ul>
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © Ryu Nishida
+      <a class="grey-text text-lighten-4 right" href="https://nishidaryu416.github.io/">More Information</a>
+    </div>
+  </div>
+</footer>

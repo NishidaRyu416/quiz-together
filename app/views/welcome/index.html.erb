@@ -1,0 +1,53 @@
+<%if logged_in?%>
+    <%if current_user.id==1%>
+<div ng-controller="Question_answerCtrl">
+  <div class="question_answer" ng-repeat="question_answer in question_answers">
+    <ul class="collection">
+      <li class="collection-item avatar">
+        <i class="material-icons circle ">perm_identity</i>
+        <span>{{$index+1}}.</span>
+        <span>{{question_answer.user_name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+    <%=link_to "Next Question",question_answers_path,method: :delete,class: "waves-effect waves-light btn lime lighten-2" %>
+        <%else%>
+    <br>
+<div ng-controller="Question_answerCtrl">
+  <form ng-submit="create()">
+    <input type="hidden" ng-model="newQuestionAnswer.user_name" required>
+    <%= audio_tag("audio.mp3",id:"audio") %>
+    <input type="submit" id ="audioButton" value="投稿する"  class="waves-effect waves-light btn deep-purple darken-2 ">
+    <%=javascript_tag do%>
+    document.querySelector('#audioButton').onclick = function () {
+    document.querySelector("#audio").play();
+    alert ("You Answered");
+    }
+    <%end%>
+  </form>
+</div>
+
+<%end%>
+<%else%>
+    <div class="carousel carousel-slider center" data-indicators="true">
+      <div class="carousel-fixed-item center">
+      </div>
+      <div class="carousel-item red white-text" href="#one!">
+        <h2></h2>
+        <p class="white-text">This is your first panel</p>
+      </div>
+      <div class="carousel-item amber white-text" href="#two!">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+      </div>
+      <div class="carousel-item green white-text" href="#three!">
+        <h2>Third Panel</h2>
+        <p class="white-text">This is your third panel</p>
+      </div>
+      <div class="carousel-item blue white-text" href="#four!">
+        <h2>Fourth Panel</h2>
+        <p class="white-text">This is your fourth panel</p>
+      </div>
+    </div>
+<%end%>
