@@ -20,7 +20,7 @@ class QuestionAnswersController < ApplicationController
       flash[:notice] = "You answered"
       redirect_to :back
     else
-      render 'new'
+      render "new"
     end
   end
   def destroy_all

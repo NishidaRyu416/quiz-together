@@ -2,9 +2,9 @@
     <%= audio_tag("audio.mp3",id:"audio") %>
     <%=f.submit "I got it!" ,class:"waves-effect waves-light btn deep-purple darken-2 audioButton"%>
     <%=javascript_tag do%>
-        document.querySelector('.audioButton').onclick = function () {
+        document.querySelector('.audioButton').click(function () {
         document.querySelector("#audio").play();
         alert("You answered")
-        }
+        });
     <%end%>
 <%end%>
