@@ -1,1 +1,11 @@
-
+<%= form_for(@answer) do|f|%>
+    <%= audio_tag("audio.mp3",id:"audio") %>
+    <%=f.submit "I got it!" ,class:"waves-effect waves-light btn deep-purple darken-2 audioButton"%>
+    <%=javascript_tag do%>
+        document.querySelector('.audioButton').onclick = function () {
+        document.querySelector("#audio").play();
+        alert("You answered")
+        Materialize.toast("You Answered", 4000,'rounded')
+        }
+    <%end%>
+<%end%>

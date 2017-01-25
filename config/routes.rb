@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :question_answers,defaults: { format: 'json' }, only: %i( index show create )
-  delete :question_answers, to: "question_answers#destroy"
+  resources :question_answers
+
+  delete :question_answers, to: "question_answers#destroy_all"
   get "answer", to:"question_answers#new"
 end

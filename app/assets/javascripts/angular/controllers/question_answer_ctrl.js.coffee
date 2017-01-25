@@ -1,4 +1,4 @@
-App.controller 'Question_answerCtrl', ($scope, $interval,QuestionAnswer) ->
+
 # 初期表示時の投稿フォーム初期値
   $scope.newQuestionAnswer = {user_name:gon.user_name}
 
