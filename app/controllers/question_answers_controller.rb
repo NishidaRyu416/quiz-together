@@ -18,7 +18,7 @@ class QuestionAnswersController < ApplicationController
     @answer.user_name=current_user.name
     if @answer.save
       flash[:notice] = "You answered"
-      redirect_to :back
+      redirect_to @answer
     else
       render "new"
     end
