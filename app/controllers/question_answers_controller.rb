@@ -18,15 +18,10 @@ class QuestionAnswersController < ApplicationController
     @answer.user_name=current_user.name
     if @answer.save
       flash[:notice] = "You answered"
-      redirect_to @answer
+      redirect_to :back
     else
       render 'new'
     end
-  end
-  def destroy
-    @answer=QuestionAnswer.find(params[:id])
-    @answer.destroy
-    redirect_to :back
   end
   def destroy_all
     QuestionAnswer.destroy_all

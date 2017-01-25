@@ -5,7 +5,8 @@
             <li class="collection-item avatar">
               <i class="material-icons circle ">perm_identity</i>
               <h5><%=index%>:<%=answer.user_name%><a href="#!"><span class="new badge"></span></a></h5>
-              <span><%=link_to"The answer was failure", answer, :method => :delete,class:"btn amber"%></span>
+              <input type="checkbox" id="<%=index%>" />
+              <label for="<%=index%>">The answer was failure</label>
             </li>
           </ul>
          <%end%>
