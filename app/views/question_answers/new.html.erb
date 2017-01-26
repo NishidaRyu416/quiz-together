@@ -1,6 +1,4 @@
 <%= form_for(@answer) do|f|%>
     <%= audio_tag("audio.mp3",id:"audio") %>
     <%=f.submit "I got it!" ,class:"waves-effect waves-light btn deep-purple darken-2 audioButton"%>
-    <%=javascript_tag do%>
-    <%end%>
 <%end%>
