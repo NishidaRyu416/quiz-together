@@ -1,5 +1,4 @@
 <%if logged_in?%>
-    <%if current_user.id==1%>
         <%@answers.each.with_index(1) do|answer,index|%>
           <ul class="collection">
             <li class="collection-item avatar">
@@ -9,12 +8,10 @@
               <label for="<%=index%>">The answer was failure</label>
             </li>
           </ul>
-         <%end%>
+        <%end%>
     <%=link_to "Next Question",question_answers_path,method: :delete,class: "waves-effect waves-light btn lime lighten-2" %>
-        <%else%>
     <br>
-    <%end%>
-<%else%>
+    <%else%>
     <div class="carousel carousel-slider center" data-indicators="true">
       <div class="carousel-fixed-item center">
       </div>
@@ -35,4 +32,4 @@
         <p class="white-text">This is your fourth panel</p>
       </div>
     </div>
-<%end%>
+  <%end%>
